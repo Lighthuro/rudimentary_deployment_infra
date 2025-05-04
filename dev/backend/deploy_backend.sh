@@ -30,6 +30,7 @@ echo -e "${green}OK${clear}"
 
 echo -e "${blue}finalizing ssh configuration...${clear}"
 $CMS_PATH cp $HOME/.ssh/authorized_keys $BACKEND_CONTAINER_NAME:/home/dev/.ssh/authorized_keys || exit 1
+$CMS_PATH container exec -u root javadevcontainer bash -c "chown dev /home/dev/.ssh/authorized_keys" || exit 1
 echo -e "${green}OK${clear}"
 $CMS_PATH container ls | grep -zP " javadevcontainer"
 
