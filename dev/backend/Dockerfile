@@ -1,5 +1,5 @@
 FROM fedora:42
-RUN dnf update && dnf upgrade
+RUN dnf -y update && dnf -y upgrade
 RUN sudo dnf -y install java-latest-openjdk.x86_64 maven postgresql.x86_64 ncurses openssh-server ssh
 RUN useradd -ms /bin/bash dev
 RUN echo "dev        ALL=(ALL)       NOPASSWD:ALL">>/etc/sudoers
