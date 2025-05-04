@@ -21,7 +21,7 @@ if [ ! -f $CMS_PATH ]; then
 fi
 
 echo -e "${blue}Building backend container...${clear}"
-$CMS_PATH build -f $SCRIPT_DIR/Dockerfile -t $BACKEND_IMAGE_NAME || exit 1
+$CMS_PATH build -f $SCRIPT_DIR/Dockerfile . -t $BACKEND_IMAGE_NAME || exit 1
 echo -e "${green}OK${clear}"
 
 echo -e "${blue}Running container...${clear}"
